@@ -92,7 +92,7 @@ export class FacetFilter extends SearchkitComponent<FacetFilterProps, any> {
 
   render() {
     if (!this.accessor) return null;
-    const { listComponent, containerComponent, showCount, title, id, countFormatter } = this.props
+    const { listComponent, containerComponent, showCount, title, id, countFormatter, mod } = this.props
     return renderComponent(containerComponent, {
       title,
       className: id ? `filter--${id}` : undefined,
@@ -108,7 +108,8 @@ export class FacetFilter extends SearchkitComponent<FacetFilterProps, any> {
         docCount: this.accessor.getDocCount(),
         showCount,
         translate:this.translate,
-        countFormatter
+        countFormatter,
+        mod
       }),
       this.renderShowMore()
     ]);
